@@ -1,5 +1,12 @@
 import pytest
-from ..app import app
+import sys
+import os
+
+# Add the root directory to Python's system path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Now import app from the root directory
+from app import app
 
 @pytest.fixture
 def client():
